@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOC FUN</title>
+    <link rel="stylesheet" href="scss/styles.scss">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+    <div class="alert alert-warning" role="alert">
+        你正在离开本网站，请单击网址后访问<br>
+        <div class="url"></div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const url = urlParams.get('target');
+        document.querySelector('.url').innerHTML = '<a href="' + url + '" class="alert-link">' + url +'</a>';
+
+        function redirectToUrl() {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+        // redirectToUrl();
+    </script>
+</body>
+
+</html>
